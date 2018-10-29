@@ -44,6 +44,7 @@ namespace SocialBook
             view.FindViewById<TextView>(Resource.Id.comments).Text = posts[position].Comments;
             view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes;
             view.FindViewById<TextView>(Resource.Id.date).Text = posts[position].Date;
+            //view.FindViewById<RelativeLayout>(Resource.Id.relativeLayout1).SetBackgroundColor(Android.Graphics.Color.ParseColor("#448bff"));
 
             return view;
         }

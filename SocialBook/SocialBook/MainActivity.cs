@@ -28,8 +28,23 @@ namespace SocialBook
                 Date = DateTime.Now.ToString("dd/MM/yy HH:mm")
             };
             postList.Add(post1);
+            SocialPost post2 = new SocialPost
+            {
+                Status = "Just arrived in Stockholm",
+                Message = "oiHAIUSgbuyagbrAGBWRAiuwgrbAWMhvNIANWRgbIAGrniBINUVriANgrAIWNRgbIULARvgbIAWRGnIUGRbNGRIUgb",
+                Comments = "200 Comments",
+                Likes = "200 Likes",
+                Date = DateTime.Now.ToString("dd/MM/yy HH:mm")
+            };
+            postList.Add(post2);
 
             listView.Adapter = new Adapter(this, postList);
+            listView.ItemClick += listView_Click;
+        }
+
+        private void listView_Click(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            //TBD
         }
     }
 }

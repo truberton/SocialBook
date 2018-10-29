@@ -39,7 +39,8 @@
 			android:id="@+id/message"
 			android:layout_below="@id/statusTitle"
 			android:layout_marginTop="35dp"
-			android:layout_marginLeft="15dp" />
+			android:layout_marginLeft="15dp"
+			android:textSize="19sp"  />
 		<TextView
 			android:text="Likes"
 			android:textAppearance="?android:attr/textAppearanceMedium"
