@@ -39,9 +39,9 @@ namespace SocialBook
                 //throw new Exception("Did not find view");
             }
 
-            view.FindViewById<TextView>(Resource.Id.statusTitle).Text = posts[position].Status;
+            view.FindViewById<TextView>(Resource.Id.statusTitle).Text = posts[position].Name;
             view.FindViewById<TextView>(Resource.Id.message).Text = posts[position].Message;
-            view.FindViewById<TextView>(Resource.Id.comments).Text = posts[position].Comments;
+            view.FindViewById<TextView>(Resource.Id.comments).Text = posts[position].CommentNumber;
             view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes;
             view.FindViewById<TextView>(Resource.Id.date).Text = posts[position].Date;
             //view.FindViewById<RelativeLayout>(Resource.Id.relativeLayout1).SetBackgroundColor(Android.Graphics.Color.ParseColor("#448bff"));

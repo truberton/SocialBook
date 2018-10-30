@@ -21,7 +21,8 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_toRightOf="@id/icon"
-			android:id="@+id/statusTitle" />
+			android:id="@+id/statusTitle"
+			android:textSize="19sp"/>
 		<TextView
 			android:text="Date"
 			android:textAppearance="?android:attr/textAppearanceSmall"

@@ -5,12 +5,14 @@ using Android.Runtime;
 using Android.Widget;
 using System.Collections.Generic;
 using System;
+using Android.Content;
 
 namespace SocialBook
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        public List<SocialPost> postList;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -18,33 +20,43 @@ namespace SocialBook
 
             var listView = FindViewById<ListView>(Resource.Id.listView1);
 
-            List<SocialPost> postList = new List<SocialPost>();
+            postList = new List<SocialPost>();
             SocialPost post1 = new SocialPost
             {
-                Status = "Just arrived in Tallinn",
+                Name = "John Smith",
                 Message = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHH!!!!!!!!!!!!",
-                Comments = "0 Comments",
+                CommentNumber = "0 Comments",
                 Likes = "0 Likes",
-                Date = DateTime.Now.ToString("dd/MM/yy HH:mm")
+                Date = DateTime.Now.ToString("dd/MM/yy HH:mm"),
+                Comments = new List<CommentData>
+                {
+                    new CommentData
+                    {
+                        Name = "Jake",
+                        Message = "REEEEEEEEEEEEEEEEEEEEEEEEEE"
+                    }
+                },
             };
             postList.Add(post1);
             SocialPost post2 = new SocialPost
             {
-                Status = "Just arrived in Stockholm",
+                Name = "Gert-Andry Kääramees",
                 Message = "oiHAIUSgbuyagbrAGBWRAiuwgrbAWMhvNIANWRgbIAGrniBINUVriANgrAIWNRgbIULARvgbIAWRGnIUGRbNGRIUgb",
-                Comments = "200 Comments",
+                CommentNumber = "200 Comments",
                 Likes = "200 Likes",
                 Date = DateTime.Now.ToString("dd/MM/yy HH:mm")
             };
             postList.Add(post2);
 
             listView.Adapter = new Adapter(this, postList);
-            listView.ItemClick += listView_Click;
+            listView.ItemClick += ListView_Click;
         }
 
-        private void listView_Click(object sender, AdapterView.ItemClickEventArgs e)
+        private void ListView_Click(object sender, AdapterView.ItemClickEventArgs e)
         {
-            //TBD
+            var commentActivity = new Intent(this, typeof(CommentActivity));
+            Values.comments = postList[e.Position].Comments;
+            StartActivity(commentActivity);
         }
     }
 }
