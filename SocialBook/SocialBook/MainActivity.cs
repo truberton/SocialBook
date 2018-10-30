@@ -34,8 +34,13 @@ namespace SocialBook
                     {
                         Name = "Jake",
                         Message = "REEEEEEEEEEEEEEEEEEEEEEEEEE"
+                    },
+                    new CommentData
+                    {
+                        Name = "Peeter",
+                        Message = "You suck"
                     }
-                },
+                }
             };
             postList.Add(post1);
             SocialPost post2 = new SocialPost
@@ -44,7 +49,20 @@ namespace SocialBook
                 Message = "oiHAIUSgbuyagbrAGBWRAiuwgrbAWMhvNIANWRgbIAGrniBINUVriANgrAIWNRgbIULARvgbIAWRGnIUGRbNGRIUgb",
                 CommentNumber = "200 Comments",
                 Likes = "200 Likes",
-                Date = DateTime.Now.ToString("dd/MM/yy HH:mm")
+                Date = DateTime.Now.ToString("dd/MM/yy HH:mm"),
+                Comments = new List<CommentData>
+                {
+                    new CommentData
+                    {
+                        Name = "Poppy",
+                        Message = "AOIhgsiugb<oue"
+                    },
+                    new CommentData
+                    {
+                        Name = "Karl",
+                        Message = "Buy my phone"
+                    }
+                }
             };
             postList.Add(post2);
 
