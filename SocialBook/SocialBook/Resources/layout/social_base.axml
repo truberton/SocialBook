@@ -43,15 +43,6 @@
 			android:layout_marginLeft="15dp"
 			android:textSize="19sp"  />
 		<TextView
-			android:text="Likes"
-			android:textAppearance="?android:attr/textAppearanceMedium"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_below="@id/message"
-			android:id="@+id/likes"
-			android:layout_marginLeft="9dp"
-			android:layout_marginTop="5dp" />
-		<TextView
 			android:text="Comments"
 			android:textAppearance="?android:attr/textAppearanceMedium"
 			android:layout_width="wrap_content"
@@ -61,6 +52,25 @@
 			android:layout_marginRight="9dp"
 			android:layout_marginTop="5dp"
 			android:layout_alignParentRight="true" />
+		<ImageButton
+			android:src="@android:drawable/ic_menu_gallery"
+			android:layout_below="@id/message"
+			android:layout_marginLeft="9dp"
+			android:layout_marginTop="5dp"
+			android:layout_width="30dip"
+			android:layout_height="30dip"
+			android:id="@+id/imageButton1"
+			android:scaleType="fitCenter" />
+		<TextView
+			android:text="Likes"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/message"
+			android:layout_toRightOf="@id/imageButton1"
+			android:id="@+id/likes"
+			android:layout_marginLeft="9dp"
+			android:layout_marginTop="5dp" />
 	</RelativeLayout>
 
 </LinearLayout>

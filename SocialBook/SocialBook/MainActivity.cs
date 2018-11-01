@@ -26,7 +26,7 @@ namespace SocialBook
                 Name = "John Smith",
                 Message = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHH!!!!!!!!!!!!",
                 CommentNumber = "0 Comments",
-                Likes = "0 Likes",
+                Likes = 0,
                 Date = DateTime.Now.ToString("dd/MM/yy HH:mm"),
                 Comments = new List<CommentData>
                 {
@@ -48,7 +48,7 @@ namespace SocialBook
                 Name = "Gert-Andry Kääramees",
                 Message = "oiHAIUSgbuyagbrAGBWRAiuwgrbAWMhvNIANWRgbIAGrniBINUVriANgrAIWNRgbIULARvgbIAWRGnIUGRbNGRIUgb",
                 CommentNumber = "200 Comments",
-                Likes = "200 Likes",
+                Likes = 200,
                 Date = DateTime.Now.ToString("dd/MM/yy HH:mm"),
                 Comments = new List<CommentData>
                 {

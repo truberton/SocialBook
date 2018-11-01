@@ -31,18 +31,41 @@ namespace SocialBook
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
+            bool liked = false;
             View view = convertView;
 
             if (view == null)
             {
                 view = context.LayoutInflater.Inflate(Resource.Layout.social_base, null);
             }
+            var imageBtn = view.FindViewById<ImageButton>(Resource.Id.imageButton1);
+            imageBtn.Focusable = false;
+            
 
             view.FindViewById<TextView>(Resource.Id.statusTitle).Text = posts[position].Name;
             view.FindViewById<TextView>(Resource.Id.message).Text = posts[position].Message;
             view.FindViewById<TextView>(Resource.Id.comments).Text = posts[position].CommentNumber;
-            view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes;
+            view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
             view.FindViewById<TextView>(Resource.Id.date).Text = posts[position].Date;
+
+            imageBtn.Click += (sender, e) =>
+            {
+                switch (liked)
+                {
+                    case false:
+                        posts[position].Likes++;
+                        view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
+                        liked = true;
+                        break;
+                    case true:
+                        posts[position].Likes--;
+                        view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
+                        liked = false;
+                        break;
+                    default:
+                        break;
+                }
+            };
             //view.FindViewById<RelativeLayout>(Resource.Id.relativeLayout1).SetBackgroundColor(Android.Graphics.Color.ParseColor("#448bff"));
 
             return view;

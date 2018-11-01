@@ -2465,8 +2465,8 @@ namespace SocialBook
 			// aapt resource value: 0x7f08008e
 			public const int commentText = 2131230862;
 			
-			// aapt resource value: 0x7f0800b5
-			public const int comments = 2131230901;
+			// aapt resource value: 0x7f0800b4
+			public const int comments = 2131230900;
 			
 			// aapt resource value: 0x7f08008f
 			public const int commentsListView = 2131230863;
@@ -2573,6 +2573,9 @@ namespace SocialBook
 			// aapt resource value: 0x7f08005f
 			public const int image = 2131230815;
 			
+			// aapt resource value: 0x7f0800b5
+			public const int imageButton1 = 2131230901;
+			
 			// aapt resource value: 0x7f0800ab
 			public const int info = 2131230891;
 			
@@ -2588,8 +2591,8 @@ namespace SocialBook
 			// aapt resource value: 0x7f080049
 			public const int left = 2131230793;
 			
-			// aapt resource value: 0x7f0800b4
-			public const int likes = 2131230900;
+			// aapt resource value: 0x7f0800b6
+			public const int likes = 2131230902;
 			
 			// aapt resource value: 0x7f080017
 			public const int line1 = 2131230743;
@@ -2606,8 +2609,8 @@ namespace SocialBook
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int masked = 2131230903;
+			// aapt resource value: 0x7f0800b8
+			public const int masked = 2131230904;
 			
 			// aapt resource value: 0x7f0800a4
 			public const int media_actions = 2131230884;
@@ -2870,8 +2873,8 @@ namespace SocialBook
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800b6
-			public const int visible = 2131230902;
+			// aapt resource value: 0x7f0800b7
+			public const int visible = 2131230903;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;
