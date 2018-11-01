@@ -36,7 +36,6 @@ namespace SocialBook
             if (view == null)
             {
                 view = context.LayoutInflater.Inflate(Resource.Layout.social_base, null);
-                //throw new Exception("Did not find view");
             }
 
             view.FindViewById<TextView>(Resource.Id.statusTitle).Text = posts[position].Name;
