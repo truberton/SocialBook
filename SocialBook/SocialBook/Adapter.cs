@@ -10,7 +10,6 @@ namespace SocialBook
     {
         List<SocialPost> posts;
         Activity context;
-        bool liked = false;
 
         public Adapter(Activity context, List<SocialPost> items) : base()
         {
@@ -33,6 +32,7 @@ namespace SocialBook
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             View view = convertView;
+            bool liked = false;
 
             if (view == null)
             {
