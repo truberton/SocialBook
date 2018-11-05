@@ -28,6 +28,7 @@ namespace SocialBook
                 CommentNumber = "0 Comments",
                 Likes = 0,
                 Date = DateTime.Now.ToString("dd/MM/yy HH:mm"),
+                Picture = this.GetDrawable(Resource.Drawable.images),
                 Comments = new List<CommentData>
                 {
                     new CommentData

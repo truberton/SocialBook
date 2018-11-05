@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Android.Graphics.Drawables;
+using System.Collections.Generic;
 
 namespace SocialBook
 {
@@ -8,8 +9,9 @@ namespace SocialBook
         public string Name { get; set; }
         public string Date { get; set; }
         public string Message { get; set; }
-        public int Likes { get; set; }
         public string CommentNumber { get; set; }
+        public int Likes { get; set; }
+        public Drawable Picture { get; set; }
         public List<CommentData> Comments { get; set; }
     }
 }

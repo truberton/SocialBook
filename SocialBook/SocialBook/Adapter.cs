@@ -10,6 +10,7 @@ namespace SocialBook
     {
         List<SocialPost> posts;
         Activity context;
+        bool liked = false;
 
         public Adapter(Activity context, List<SocialPost> items) : base()
         {
@@ -31,7 +32,6 @@ namespace SocialBook
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            bool liked = false;
             View view = convertView;
 
             if (view == null)
@@ -48,19 +48,24 @@ namespace SocialBook
             view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
             view.FindViewById<TextView>(Resource.Id.date).Text = posts[position].Date;
 
+            if (posts[position].Picture != null)
+            {
+                view.FindViewById<ImageView>(Resource.Id.postImage).SetImageDrawable(posts[position].Picture);
+            }
+
             imageBtn.Click += (sender, e) =>
             {
                 switch (liked)
                 {
                     case false:
+                        liked = true;
                         posts[position].Likes++;
                         view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
-                        liked = true;
                         break;
                     case true:
+                        liked = false;
                         posts[position].Likes--;
                         view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
-                        liked = false;
                         break;
                     default:
                         break;
