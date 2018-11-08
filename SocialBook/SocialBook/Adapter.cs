@@ -41,7 +41,7 @@ namespace SocialBook
             }
             var imageBtn = view.FindViewById<ImageButton>(Resource.Id.imageButton1);
             imageBtn.Focusable = false;
-            
+
 
             view.FindViewById<TextView>(Resource.Id.statusTitle).Text = posts[position].Name;
             view.FindViewById<TextView>(Resource.Id.message).Text = posts[position].Message;
@@ -60,20 +60,12 @@ namespace SocialBook
                 {
                     case false:
                         liked = true;
-                        posts[position].Likes++;
-                        if (posts[position].Likes > orig + 1)
-                        {
-                            posts[position].Likes = orig + 1;
-                        }
+                        posts[position].Likes = orig + 1;
                         view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
                         break;
                     case true:
                         liked = false;
-                        posts[position].Likes--;
-                        if (posts[position].Likes < orig)
-                        {
-                            posts[position].Likes = orig;
-                        }
+                        posts[position].Likes = orig;
                         view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
                         break;
                     default:
