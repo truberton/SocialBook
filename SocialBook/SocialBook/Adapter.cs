@@ -63,10 +63,12 @@ namespace SocialBook
                 {
                     case false:
                         liked = true;
-                        view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + 1 + " Likes";
+                        posts[position].Likes++;
+                        view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
                         break;
                     case true:
                         liked = false;
+                        posts[position].Likes--;
                         view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
                         break;
                     default:
