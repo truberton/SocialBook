@@ -25,7 +25,7 @@ namespace SocialBook
             {
                 Name = "John Smith",
                 Message = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHH!!!!!!!!!!!!",
-                CommentNumber = "0 Comments",
+                CommentNumber = "3 Comments",
                 Likes = 0,
                 Date = DateTime.Now.ToString("dd/MM/yy HH:mm"),
                 Picture = this.GetDrawable(Resource.Drawable.images),
@@ -40,6 +40,11 @@ namespace SocialBook
                     {
                         Name = "Peeter",
                         Message = "You suck"
+                    },
+                    new CommentData
+                    {
+                        Name = "Amy",
+                        Message = "Please stop"
                     }
                 }
             };
@@ -48,7 +53,7 @@ namespace SocialBook
             {
                 Name = "Gert-Andry Kääramees",
                 Message = "oiHAIUSgbuyagbrAGBWRAiuwgrbAWMhvNIANWRgbIAGrniBINUVriANgrAIWNRgbIULARvgbIAWRGnIUGRbNGRIUgb",
-                CommentNumber = "200 Comments",
+                CommentNumber = "2 Comments",
                 Likes = 200,
                 Date = DateTime.Now.ToString("dd/MM/yy HH:mm"),
                 Comments = new List<CommentData>
@@ -66,6 +71,69 @@ namespace SocialBook
                 }
             };
             postList.Add(post2);
+            SocialPost post3 = new SocialPost
+            {
+                Name = "Robi",
+                Message = "Vote for pet rock 2018",
+                CommentNumber = "2 Comments",
+                Likes = 27,
+                Date = DateTime.Now.ToString("dd/MM/yy HH:mm"),
+                Comments = new List<CommentData>
+                {
+                    new CommentData
+                    {
+                        Name = "Poppy",
+                        Message = "AOIhgsiugb<oue"
+                    },
+                    new CommentData
+                    {
+                        Name = "Karl",
+                        Message = "Buy my phone"
+                    }
+                }
+            };
+            postList.Add(post3);
+            SocialPost post4 = new SocialPost
+            {
+                Name = "Rein",
+                Message = "I am vegan, that is all",
+                CommentNumber = "2 Comments",
+                Likes = 2,
+                Date = DateTime.Now.ToString("dd/MM/yy HH:mm"),
+                Comments = new List<CommentData>
+                {
+                    new CommentData
+                    {
+                        Name = "Poppy",
+                        Message = "AOIhgsiugb<oue"
+                    },
+                    new CommentData
+                    {
+                        Name = "Karl",
+                        Message = "Buy my phone"
+                    }
+                }
+            };
+            postList.Add(post4);
+            SocialPost post5 = new SocialPost
+            {
+                Name = "Koko",
+                Message = "Stop bullying",
+                CommentNumber = "1 Comment",
+                Likes = 5,
+                Date = DateTime.Now.ToString("dd/MM/yy HH:mm"),
+                Comments = new List<CommentData>
+                {
+                    new CommentData
+                    {
+                        Name = "Poppy",
+                        Message = "AOIhgsiugb<oue"
+                    }
+                }
+            };
+            postList.Add(post5);
+
+
 
             listView.Adapter = new Adapter(this, postList);
             listView.ItemClick += ListView_Click;
