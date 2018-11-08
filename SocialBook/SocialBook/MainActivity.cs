@@ -20,6 +20,7 @@ namespace SocialBook
 
             var listView = FindViewById<ListView>(Resource.Id.listView1);
 
+            #region posts
             postList = new List<SocialPost>();
             SocialPost post1 = new SocialPost
             {
@@ -132,8 +133,7 @@ namespace SocialBook
                 }
             };
             postList.Add(post5);
-
-
+            #endregion
 
             listView.Adapter = new Adapter(this, postList);
             listView.ItemClick += ListView_Click;

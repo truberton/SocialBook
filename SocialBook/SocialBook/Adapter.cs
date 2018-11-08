@@ -33,7 +33,6 @@ namespace SocialBook
         {
             View view = convertView;
             bool liked = false;
-            int orig = posts[position].Likes;
 
             if (view == null)
             {
@@ -53,6 +52,10 @@ namespace SocialBook
             {
                 view.FindViewById<ImageView>(Resource.Id.postImage).SetImageDrawable(posts[position].Picture);
             }
+            else
+            {
+                view.FindViewById<ImageView>(Resource.Id.postImage).SetImageDrawable(null);
+            }
 
             imageBtn.Click += (sender, e) =>
             {
@@ -60,12 +63,12 @@ namespace SocialBook
                 {
                     case false:
                         liked = true;
-                        posts[position].Likes = orig + 1;
+                        posts[position].Likes++;
                         view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
                         break;
                     case true:
                         liked = false;
-                        posts[position].Likes = orig;
+                        posts[position].Likes--;
                         view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
                         break;
                     default:
