@@ -33,6 +33,7 @@ namespace SocialBook
         {
             View view = convertView;
             bool liked = false;
+            int orig = posts[position].Likes;
 
             if (view == null)
             {
@@ -60,11 +61,19 @@ namespace SocialBook
                     case false:
                         liked = true;
                         posts[position].Likes++;
+                        if (posts[position].Likes > orig + 1)
+                        {
+                            posts[position].Likes = orig + 1;
+                        }
                         view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
                         break;
                     case true:
                         liked = false;
                         posts[position].Likes--;
+                        if (posts[position].Likes < orig)
+                        {
+                            posts[position].Likes = orig;
+                        }
                         view.FindViewById<TextView>(Resource.Id.likes).Text = posts[position].Likes + " Likes";
                         break;
                     default:
