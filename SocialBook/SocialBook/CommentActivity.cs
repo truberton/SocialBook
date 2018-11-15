@@ -22,6 +22,14 @@ namespace SocialBook
             SetContentView(Resource.Layout.comments_main);
             var list = FindViewById<ListView>(Resource.Id.commentsListView);
             list.Adapter = new CommentsAdapter(this, Values.comments);
+
+            var commentBtn = FindViewById<Button>(Resource.Id.commentBtn);
+            commentBtn.Click += CommentBtn_Click;
+        }
+
+        private void CommentBtn_Click(object sender, EventArgs e)
+        {
+            Toast.MakeText(Application, "Your comment will be reviewed in 24 hours", ToastLength.Long).Show();
         }
     }
 }
