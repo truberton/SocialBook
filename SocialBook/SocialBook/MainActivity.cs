@@ -120,7 +120,7 @@ namespace SocialBook
             {
                 Name = "Koko",
                 Message = "Stop bullying",
-                CommentNumber = "1 Comment",
+                CommentNumber = "1 Comments",
                 Likes = 5,
                 Date = DateTime.Now.ToString("dd/MM/yy HH:mm"),
                 Comments = new List<CommentData>
@@ -135,6 +135,27 @@ namespace SocialBook
             postList.Add(post5);
             #endregion
 
+            var postpost = FindViewById<Button>(Resource.Id.postBtn);
+            postpost.Click += Postpost_Click;
+            listView.Adapter = new Adapter(this, postList);
+            listView.ItemClick += ListView_Click;
+        }
+
+        private void Postpost_Click(object sender, EventArgs e)
+        {
+            string postText = FindViewById<EditText>(Resource.Id.editText1).Text;
+            postList.Add(new SocialPost
+            {
+                Name = "Õpilane",
+                Message = postText,
+                CommentNumber = "0 Comments",
+                Likes = 0,
+                Date = DateTime.Now.ToString("dd/MM/yy HH:mm"),
+                Comments = new List<CommentData>()
+            });
+            var listView = FindViewById<ListView>(Resource.Id.listView1);
+
+            FindViewById<EditText>(Resource.Id.editText1).Text = "";
             listView.Adapter = new Adapter(this, postList);
             listView.ItemClick += ListView_Click;
         }
