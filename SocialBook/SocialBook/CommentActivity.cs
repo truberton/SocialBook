@@ -29,7 +29,14 @@ namespace SocialBook
 
         private void CommentBtn_Click(object sender, EventArgs e)
         {
-            Toast.MakeText(Application, "Your comment will be reviewed in 24 hours", ToastLength.Long).Show();
+            string comment = FindViewById<TextView>(Resource.Id.insertText).Text;
+            Values.comments.Add(new CommentData
+            {
+                Message = comment,
+                Name = "Opilane"
+            });
+            var list = FindViewById<ListView>(Resource.Id.commentsListView);
+            list.Adapter = new CommentsAdapter(this, Values.comments);
         }
     }
 }
